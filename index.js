@@ -36,7 +36,12 @@ inquirer
         "Add employee",
         "Update employee",
         "Delete employee",
-        "View department budgets"
+        "View department budgets",
+        "Update employee manager",
+        "View employees by manager",
+        "View employees by department",
+        "Delete department",
+        "Delete role"
     ]
 })
 .then((answer) => {
@@ -55,12 +60,27 @@ inquirer
 
         case "View department budgets":
             viewDeptBudget();
-    }
+
+        case "Update employee manager":
+            updateEmpMngr();
+
+        case "View employees by manager":
+            viewAllEmpByMngr();
+
+        case "View employees by department":
+            viewAllEmpByDept();
+
+        case "Delete department":
+            deleteDept();
+
+        case "Delete role":
+            deleteRole();
+        }
+    });
 }
 
 
 
 
-}
 
 module.exports = connection;
