@@ -83,11 +83,32 @@ inquirer
 //View employees
 function viewAllEmp() {
     let query = "SELECT e.id, e.first_name, e.last_name, role.title, department.name AS department, role.salary, concat(m.first_name, '' , m.last_name) AS manager FROM employee m ON e.manager_id = m.id INNER JOIN role ON e.role_id = role.id INNER JOIN department_id = department.id ORDER BY ASC";
-    
+    connection.query(query, function(err, res) {
+        if(err) return err;
+        console.table(res)
+        mainMenu();
+    });
 }
 
+//View employee and departments
+function viewAllEmpByDept(){
+let deptArr = [];
+promisemysqyl.createConnection(connection).then((conn) => {
+    return conn.query ('SELECT name FROM deprtment');
+    }).then(function(value){
+        deptQuery = value;
+        for (i=0; i < value.length; i++){
+            deptArr.push(value[i].name);
+        }
+})  .then(() => {
+
+})
 
 
 
 
+
+
+
+}
 module.exports = connection;
