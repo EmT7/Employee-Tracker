@@ -1,6 +1,6 @@
-# Employee-Tracker
+# Employee Tracker 
 
-## Homework Challenge #12-SQL Employee tracker using content management systems
+## Homework Challenge #12 Univeristy of Oregon Bootcamp-SQL Employee tracker using content management systems
 
 ## User Story
 As a business owner
@@ -33,6 +33,7 @@ Attached is a video providing application deployment
 * Visual Studio Code
 * Node
 * Inquirer
+* JavaScript
 * Console table 
 * MySQL
 * GitHub Terminal 

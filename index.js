@@ -490,5 +490,5 @@ promisemysql.createConnection(connectionProperties)
 
 
 
-}
+
 module.exports = connection;
