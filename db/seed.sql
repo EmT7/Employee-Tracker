@@ -1,11 +1,11 @@
 USE cms;
 
 INSERT into department (name, id) VALUES ("Marketing");
-INSERT into department (name, ) VALUES ("");
-INSERT into department (name) VALUES ("");
-INSERT into department (name) VALUES ("");
-INSERT into department (name) VALUES ("");
-INSERT into department (name) VALUES ("");
+INSERT into department (name, id) VALUES ("");
+INSERT into department (name, id) VALUES ("");
+INSERT into department (name, id) VALUES ("");
+INSERT into department (name, id) VALUES ("");
+INSERT into department (name, id) VALUES ("");
 
 INSERT into role (id, title, salary, department_id) VALUES ("");
 INSERT into role (id, title, salary, department_id) VALUES ("");
