@@ -2,7 +2,7 @@
 const mysql = require("mysql");
 const inquirer = require("inquirer");
 const consoleTable = require("console.table");
-const database = require("./db")
+const database = require("./db/cms")
 const promisemysqyl = require("promise-mysql");
 
 
@@ -12,7 +12,7 @@ const connection = {
     port:3003,
     user:"root",
     password:"bootcamp",
-    database:"cms"
+    database:"./db/cms"
 }
 
 const connection = mysql.createConnection(connection);
@@ -82,7 +82,8 @@ inquirer
 
 //View employees
 function viewAllEmp() {
-    let query = "SELECT "
+    let query = "SELECT e.id, e.first_name, e.last_name, role.title, department.name AS department, role.salary, concat(m.first_name, '' , m.last_name) AS manager FROM employee m ON e.manager_id = m.id INNER JOIN role ON e.role_id = role.id INNER JOIN department_id = department.id ORDER BY ASC";
+    
 }
 
 

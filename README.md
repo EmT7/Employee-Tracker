@@ -31,10 +31,12 @@ Attached is a video providing application deployment
 
 ## Technologies Used:
 * Visual Studio Code
-* Nodee
+* Node
 * Inquirer
 * Console table 
-* MySQYL
+* MySQL
 * GitHub Terminal 
+
+
 
 ## Made by Miranda T
