@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS cms;
-CREATE database cms;
-USE cms;
+DROP DATABASE IF EXISTS company_db;
+CREATE database company_db;
+USE company db;
 
 -- Department table
 CREATE TABLE department (
