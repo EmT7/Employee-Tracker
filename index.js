@@ -15,11 +15,12 @@ const connection = {
     database:"cms"
 }
 
-const connection = mysql.createConnection(connection
-    );
+const connection = mysql.createConnection(connection);
+
 connection.connect((err) => {
     if (err) throw err;
     console.log("Employee Tracker");
+    mainMenu();
 });
 
 // Create main menu
@@ -77,6 +78,11 @@ inquirer
             deleteRole();
         }
     });
+}
+
+//View employees
+function viewAllEmp() {
+    let query = "SELECT "
 }
 
 
