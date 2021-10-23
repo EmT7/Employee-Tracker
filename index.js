@@ -36,9 +36,31 @@ inquirer
         "Add employee",
         "Update employee",
         "Delete employee",
-        "View department budget"
+        "View department budgets"
     ]
 })
+.then((answer) => {
+    switch (answer.action) {
+        case "View all employees":
+            viewAllEmp();
+
+        case "Add employee":
+            addEmp();
+
+        case "Update employee role":
+            updateEmpRole();
+
+        case "Delete employee":
+            deleteEmp();
+
+        case "View department budgets":
+            viewDeptBudget();
+    }
+}
+
+
+
+
 }
 
 module.exports = connection;
