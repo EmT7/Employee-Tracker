@@ -1,4 +1,5 @@
 # Employee Tracker 
+![GitHub license](https://img.shields.io/badge/license-ISC-blue.svg)
 
 ## Homework Challenge #12 Univeristy of Oregon Bootcamp-SQL Employee tracker using content management systems
 

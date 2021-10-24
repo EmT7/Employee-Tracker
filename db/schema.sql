@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS company_db;
 CREATE database company_db;
-USE company db;
+USE company_db;
 
 -- Department table
 CREATE TABLE department (

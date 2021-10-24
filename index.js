@@ -7,16 +7,14 @@ const express = require('express');
 
 require('dotenv').config()
 
-
-const connection = mysql.createConnection(connectionProperties);
 // Establish Connection
-connectionProperties = {
+const connection = mysql.createConnection({
     host: "localhost",
     port:3306,
     user:"root",
     password:"bootcamp",
     database:"company_db"
-}
+});
 
 
 connection.connect((err) => {
@@ -133,7 +131,7 @@ promisemysqyl.createConnection(connection).then((conn) => {
 function viewAllEmpByRole(){
 let roleArr = [];
 
-const connection = mysql.createConnection(connectionProperties)
+const connection = mysql.createConnection
 .then((conn) => {
 
     return conn.query('SELECT title FROM role');
@@ -270,7 +268,7 @@ promisemysql.createConnection(connectionProperties
 // Adding Role
 function addRole(){
 let departmentArr = [];
-const connection = mysql.createConnection(connectionProperties)
+const connection = mysql.createConnection
 .then((conn) => {
 return conn.query('SELECT id, name FROM department ORDER BY name ASC');
 
@@ -465,7 +463,7 @@ promisemysql.createConnection(connectionProperties
 function viewAllEmpByMngr(){
 let managerArr = [];
 
-const connection = mysql.createConnection(connectionProperties)
+const connection = mysql.createConnection
 .then((conn) => {
     return conn.query("SELECT DISTINCT m.id, CONCAT(m.first_name, ' ', m.last_name) AS manager FROM employee e Inner JOIN employee m ON e.manager_id = m.id");
 
@@ -695,7 +693,7 @@ promisemysql.createConnection(connectionProperties
 // View Department Budgets
 function viewDeptBudget(){
 
-const connection = mysql.createConnection(connectionProperties)
+const connection = mysql.createConnection
 .then((conn) => {
     return  Promise.all([
         conn.query("SELECT department.name AS department, role.salary FROM employee e LEFT JOIN employee m ON e.manager_id = m.id INNER JOIN role ON e.role_id = role.id INNER JOIN department ON role.department_id = department.id ORDER BY department ASC"),
@@ -728,5 +726,4 @@ const connection = mysql.createConnection(connectionProperties)
 });
 }   
 
-module.exports = db;
 module.exports = connection;
