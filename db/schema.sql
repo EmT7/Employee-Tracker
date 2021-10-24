@@ -5,14 +5,14 @@ USE company_db;
 -- Department table
 CREATE TABLE department (
   id INTEGER NOT NULL auto_increment,
-  name VARCHAR(50),
+  name VARCHAR(30),
   PRIMARY KEY (id)
 );
 
 -- Role table
 CREATE TABLE role (
   id INTEGER NOT NULL auto_increment,
-  title VARCHAR(50),
+  title VARCHAR(30),
   salary DECIMAL,
   department_id INTEGER,
   PRIMARY KEY (id),
@@ -22,8 +22,8 @@ CREATE TABLE role (
 -- Employee table
 CREATE TABLE employee (
   id INTEGER NOT NULL auto_increment,
-  first_name VARCHAR(50),
-  last_name VARCHAR(50),
+  first_name VARCHAR(30),
+  last_name VARCHAR(30),
   role_id INTEGER,
   manager_id INTEGER,
   PRIMARY KEY (id),
