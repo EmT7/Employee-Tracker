@@ -54,10 +54,10 @@ function addRole(){
     
     });
 
-    // Update Employee Role
-function updateEmpRole(){
-    let employeeArr = [];
-    let roleArr = [];
+                // Update Employee Role
+                function updateEmpRole(){
+                let employeeArr = [];
+                let roleArr = [];
     
     
     promisemysql.createConnection(connectionProperties
@@ -180,7 +180,6 @@ function deleteRole(){
             });
         });
     });
-}
-    
+
     
     module.exports = role;
