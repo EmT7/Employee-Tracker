@@ -5,11 +5,11 @@ const db = mysql.createConnection(
     {
       host: 'localhost',
       user: 'root',
-      password: '',
+      password: 'Cindaboo08!',
       database: 'company_db'
     },
     console.log('Connected to Database.')
   );
   
   //export of this file for use by other modules
-  module.exports = connection;
+  module.exports = db
