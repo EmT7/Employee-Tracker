@@ -185,4 +185,4 @@ class Role {
     }
 }
     
-    module.exports = new Role();
+module.exports = Role;
