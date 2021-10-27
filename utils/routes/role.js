@@ -3,7 +3,8 @@ const connection = require("./connection");
 const inquirer = require("inquirer");
 
 // Adding Role
-function addRole(){
+class Role {
+    addRole(){
     let departmentArr = [];
     const connection = mysql.createConnection
     .then((conn) => {
@@ -41,7 +42,7 @@ function addRole(){
                         deptID = departments[i].id;
                     }
                 }
-    
+            
                 // Adding role to table
                 connection.query(`INSERT INTO role (title, salary, department_id)
                 VALUES ("${answer.roleTitle}", ${answer.salary}, ${deptID})`, (err, res) => {
@@ -52,10 +53,11 @@ function addRole(){
     
             });
     
-    });
+        });
+    }
 
                 // Update Employee Role
-                function updateEmpRole(){
+                updateEmpRole(){
                 let employeeArr = [];
                 let roleArr = [];
     
@@ -119,7 +121,7 @@ function addRole(){
     });
     
     // Delete a Role
-function deleteRole(){
+    function deleteRole() {
     let roleArr = [];
     promisemysql.createConnection(connectionProperties
     ).then((conn) => {
@@ -180,6 +182,7 @@ function deleteRole(){
             });
         });
     });
-
+    }
+}
     
-    module.exports = role;
+    module.exports = new Role();
