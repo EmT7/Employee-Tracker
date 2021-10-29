@@ -56,68 +56,69 @@ class Role {
         });
     }
 
-                // Update Employee Role
-                updateEmpRole(){
-                let employeeArr = [];
-                let roleArr = [];
+    // Update Employee Role
+        updateEmpRole(){
+        let employeeArr = [];
+        let roleArr = [];
     
     
-    promisemysql.createConnection(connectionProperties
-    ).then((conn) => {
-        return Promise.all([
-            conn.query('SELECT id, title FROM role ORDER BY title ASC'), 
-            conn.query("SELECT employee.id, concat(employee.first_name, ' ' ,  employee.last_name) AS Employee FROM employee ORDER BY Employee ASC")
-        ]);
-    }).then(([roles, employees]) => {
-    
-        for (i=0; i < roles.length; i++){
-            roleArr.push(roles[i].title);
-        }
-    
-        for (i=0; i < employees.length; i++){
-            employeeArr.push(employees[i].Employee);
-            //console.log(value[i].name);
-        }
-    
-        return Promise.all([roles, employees]);
-    }).then(([roles, employees]) => {
-    
-        inquirer.prompt([
-            {
-                // prompt user to select employee
-                name: "employee",
-                type: "list",
-                message: "What employee would you like to edit?",
-                choices: employeeArr
-            }, {
-                // Select role to update employee
-                name: "role",
-                type: "list",
-                message: "What is their new role?",
-                choices: roleArr
-            },]).then((answer) => {
-                let roleID;
-                let employeeID;
-    
-                for (i=0; i < roles.length; i++){
-                    if (answer.role == roles[i].title){
-                        roleID = roles[i].id;
+        promisemysql.createConnection(connectionProperties
+        ).then((conn) => {
+            return Promise.all([
+                conn.query('SELECT id, title FROM role ORDER BY title ASC'), 
+                conn.query("SELECT employee.id, concat(employee.first_name, ' ' ,  employee.last_name) AS Employee FROM employee ORDER BY Employee ASC")
+            ]);
+        }).then(([roles, employees]) => {
+        
+            for (i=0; i < roles.length; i++){
+                roleArr.push(roles[i].title);
+            }
+        
+            for (i=0; i < employees.length; i++){
+                employeeArr.push(employees[i].Employee);
+                //console.log(value[i].name);
+            }
+        
+            return Promise.all([roles, employees]);
+        }).then(([roles, employees]) => {
+        
+            inquirer.prompt([
+                {
+                    // prompt user to select employee
+                    name: "employee",
+                    type: "list",
+                    message: "What employee would you like to edit?",
+                    choices: employeeArr
+                }, {
+                    // Select role to update employee
+                    name: "role",
+                    type: "list",
+                    message: "What is their new role?",
+                    choices: roleArr
+                },]).then((answer) => {
+                    let roleID;
+                    let employeeID;
+        
+                    for (i=0; i < roles.length; i++){
+                        if (answer.role == roles[i].title){
+                            roleID = roles[i].id;
+                        }
                     }
-                }
-    
-                for (i=0; i < employees.length; i++){
-                    if (answer.employee == employees[i].Employee){
-                        employeeID = employees[i].id;
+        
+                    for (i=0; i < employees.length; i++){
+                        if (answer.employee == employees[i].Employee){
+                            employeeID = employees[i].id;
+                        }
                     }
-                }
-                
-                // update employee 
-                connection.query(`UPDATE employee SET role_id = ${roleID} WHERE id = ${employeeID}`, (err, res) => {
-                    if(err) return err;
-                    console.log(`\n ${answer.employee} ROLE UPDATED TO ${answer.role}...\n `);
-                    mainMenu();
-                });
+                    
+                    // update employee 
+                    connection.query(`UPDATE employee SET role_id = ${roleID} WHERE id = ${employeeID}`, (err, res) => {
+                        if(err) return err;
+                        console.log(`\n ${answer.employee} ROLE UPDATED TO ${answer.role}...\n `);
+                        mainMenu();
+                  
             });
+        });
     });
     
     // Delete a Role
@@ -182,7 +183,6 @@ class Role {
             });
         });
     });
-    }
 }
     
 module.exports = Role;
