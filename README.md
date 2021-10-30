@@ -28,8 +28,8 @@ WHEN I choose to update an employee role
 THEN I am prompted to select an employee to update and their new role and this information is updated in the database 
 
 ## Deployment
-Attached is a video providing application deployment
-<iframe src="https://drive.google.com/file/d/14P1GUuKP6cxE4K7UjgQY2cFLr7KdHRxl/preview" width="640" height="480"></iframe>
+Attached is a link for video providing application deployment
+https://drive.google.com/file/d/14P1GUuKP6cxE4K7UjgQY2cFLr7KdHRxl/preview
 
 ## Technologies Used:
 * Visual Studio Code
