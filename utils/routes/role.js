@@ -60,8 +60,7 @@ class Role {
         updateEmpRole(){
         let employeeArr = [];
         let roleArr = [];
-    
-    
+        
         promisemysql.createConnection(connectionProperties
         ).then((conn) => {
             return Promise.all([
@@ -110,13 +109,13 @@ class Role {
                             employeeID = employees[i].id;
                         }
                     }
-                    
-                    // update employee 
-                    connection.query(`UPDATE employee SET role_id = ${roleID} WHERE id = ${employeeID}`, (err, res) => {
-                        if(err) return err;
-                        console.log(`\n ${answer.employee} ROLE UPDATED TO ${answer.role}...\n `);
-                        mainMenu();
-                  
+    
+                   
+    // update employee 
+    connection.query(`UPDATE employee SET role_id = ${roleID} WHERE id = ${employeeID}`, (err, res) => {
+        if(err) return err;
+        console.log(`\n ${answer.employee} ROLE UPDATED TO ${answer.role}...\n `);
+        mainMenu();
             });
         });
     });

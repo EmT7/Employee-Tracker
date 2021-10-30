@@ -1,38 +1,25 @@
 {
-  "name": "employee-tracker",
+  "name": "Employee-Tracker",
   "version": "1.0.0",
-  "description": "Homework Challenge #12-Employee Tracking CMS",
+  "description": "![GitHub license](https://img.shields.io/badge/license-ISC-blue.svg)",
   "main": "index.js",
-  "dependencies": {
-    "console-table": "^0.1.2",
-    "console.table": "^0.10.0",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "inquirer": "^8.2.0",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.3.2",
-    "promise-mysql": "^5.0.4"
-  },
-  "devDependencies": {
-    "jest": "^27.3.1"
-  },
   "scripts": {
-    "test": "jest",
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MirandaT77/Employee-Tracker.git"
   },
-  "keywords": [
-    "MySQL",
-    "Employee-tracker",
-    "Node"
-  ],
-  "author": "Miranda T",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MirandaT77/Employee-Tracker/issues"
   },
-  "homepage": "https://github.com/MirandaT77/Employee-Tracker#readme"
+  "homepage": "https://github.com/MirandaT77/Employee-Tracker#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^8.2.0",
+    "mysql2": "^2.3.2"
+  }
 }
